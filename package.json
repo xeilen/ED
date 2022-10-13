@@ -1,6 +1,9 @@
 {
   "name": "npm",
   "version": "0.0.0",
+  "engines": {
+    "npm": "8.15.0"
+  },
   "scripts": {
     "dev": "vite",
     "build-with-type-check": "run-p type-check build-only",
