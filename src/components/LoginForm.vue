@@ -11,7 +11,7 @@
         </n-form-item>
 
         <n-form-item label="Password">
-          <n-input v-model:value="password" />
+          <n-input type="password" v-model:value="password" />
         </n-form-item>
 
         <n-button attr-type="submit" type="primary" :block="true">

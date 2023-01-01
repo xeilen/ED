@@ -6,33 +6,51 @@ import type { UserLoginData } from '@/types/interfaces'
 
 const auth = useAuthService()
 
-const checkIsLoggedIn = (): boolean => {
-  const userData: UserLoginData | null = ls.get(STORAGE_KEY)
-
-  return !!(userData && userData.accessToken)
-}
-
 export const useAuthStore = defineStore('authStore', {
   state: () => {
     return {
       email: '',
-      isLoggedIn: checkIsLoggedIn(),
+      firstName: '',
+      lastName: '',
+      organizationName: '',
     }
   },
 
   actions: {
     async login(email: string, password: string) {
-      await auth.initLogin(email, password)
+      const authData = await auth.initLogin(email, password)
+      console.log(authData)
+      
+      if (authData) this.setAuthData(authData)
     },
 
     logout() {
       auth.logout()
     },
 
-    async register(email: string, password: string) {
-      const response = await auth.register(email, password)
+    async register(model: any) {
+      const response = await auth.register(model)
 
       return response.ok
     },
+    
+    setAuthData(authData) {
+      this.email = authData.user.email
+      this.firstName = authData.user.first_name
+      this.lastName = authData.user.last_name
+      this.organizationName = authData.organization.name
+    },
+  
+    checkIsLoggedIn() {
+      const userData: UserLoginData | null = ls.get(STORAGE_KEY)
+      
+      if (userData && userData.accessToken) {
+        this.setAuthData(userData)
+        return true
+      }
+      
+      return false
+    }
+    
   },
 })

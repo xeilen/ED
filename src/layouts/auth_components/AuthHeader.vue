@@ -7,6 +7,7 @@
       class="header"
     >
       <n-space justify="end" align="center">
+        <div>{{ firstName }} {{ lastName }}, {{ organizationName }}</div>
         <n-button @click="initLogout">Logout</n-button>
       </n-space>
     </n-layout-header>
@@ -17,8 +18,11 @@
 <script setup lang="ts">
 import { useAuthStore } from '@/stores/auth'
 import { useRouter } from 'vue-router'
+import { storeToRefs } from 'pinia'
 
-const { logout } = useAuthStore()
+const authStore = useAuthStore()
+const { firstName, lastName, organizationName } = storeToRefs(authStore)
+const { logout } = authStore
 const router = useRouter()
 
 const initLogout = () => {

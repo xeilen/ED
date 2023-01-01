@@ -11,10 +11,12 @@ export const useUsersStore = defineStore('usersStore', {
   },
 
   actions: {
-    async getUsers() {
+    async getUsers(organizationId) {
       this.error = false
       try {
-        const response = await api.get('/users')
+        const response = await api.post('/users', {
+          organization_id: organizationId
+        })
         this.users = response.data
       } catch (e) {
         this.error = true

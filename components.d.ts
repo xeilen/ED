@@ -24,6 +24,7 @@ declare module '@vue/runtime-core' {
     NMenu: typeof import('naive-ui')['NMenu']
     NMessageProvider: typeof import('naive-ui')['NMessageProvider']
     NNotificationProvider: typeof import('naive-ui')['NNotificationProvider']
+    NSelect: typeof import('naive-ui')['NSelect']
     NSpace: typeof import('naive-ui')['NSpace']
     RegistrationForm: typeof import('./src/components/RegistrationForm.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

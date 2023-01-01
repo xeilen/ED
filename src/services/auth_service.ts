@@ -21,17 +21,24 @@ class AuthService {
     }
 
     ls.set(STORAGE_KEY, response.data)
+    
+    return response.data
   }
 
   logout() {
     ls.remove(STORAGE_KEY)
   }
 
-  async register(email: string, password: string) {
-    return await this.api.post('/registration', {
-      email,
-      password,
-    })
+  async register(model) {
+    return await this.api.post('/registration', model)
+  }
+  
+  getAuthInfo() {
+    const data: { user: {organization_id: string }, organization: { id: number, name: string, type: string }} = ls.get(STORAGE_KEY)
+    if (data) return {
+      user: data.user,
+      organization: data.organization
+    }
   }
 }
 

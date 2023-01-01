@@ -12,7 +12,6 @@ const router = createRouter({
 router.beforeEach((to, from) => {
   const authRequired = !PUBLIC_PAGES.includes(to.name as string)
   const loggedIn = !!ls.get('auth')?.accessToken
-  console.log(routes);
 
   if ((loggedIn && to.name === 'login') || to.fullPath === '/')
     return { name: 'dashboard' }
