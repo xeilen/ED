@@ -14,13 +14,18 @@ class AuthService {
       email,
       password,
     })
+    
+    const [, token] = response.headers.get('Authorization').split(' ')
 
     if (!response.ok) {
       console.error('error when login')
       return
     }
 
-    ls.set(STORAGE_KEY, response.data)
+    ls.set(STORAGE_KEY, {
+      ...response.data,
+      accessToken: token
+    })
     
     return response.data
   }

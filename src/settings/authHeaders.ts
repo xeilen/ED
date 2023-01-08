@@ -5,7 +5,7 @@ export const getAuthHeaders = () => {
   const loginData: UserLoginData | null = ls.get('auth')
 
   if (loginData && loginData.accessToken) {
-    return { Authorization: `Barrer ${loginData.accessToken}` }
+    return { Authorization: `Bearer ${loginData.accessToken}` }
   }
 
   return {}
