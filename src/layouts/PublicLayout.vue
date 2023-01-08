@@ -6,9 +6,6 @@
 
 <script setup lang="ts">
 import LayoutWrapper from '@/layouts/LayoutWrapper.vue'
-
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

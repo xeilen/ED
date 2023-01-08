@@ -22,7 +22,7 @@
 <script setup lang="ts">
 import { computed, ref, h } from 'vue'
 import { menuItems } from '@/settings/menu'
-import { RouterLink, useRoute } from "vue-router";
+import { RouterLink, useRoute } from 'vue-router'
 import { NIcon } from 'naive-ui'
 
 const route = useRoute()
@@ -35,7 +35,7 @@ const renderMenuLabel = (item) => {
 }
 
 const renderIcon = (icon) => {
-  return h(NIcon, null, { default: () => h(icon)})
+  return h(NIcon, null, { default: () => h(icon) })
 }
 
 const menuItemsOptions = computed(() =>
@@ -49,6 +49,4 @@ const menuItemsOptions = computed(() =>
 )
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

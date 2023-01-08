@@ -1,5 +1,5 @@
 import ls from 'localstorage-slim'
-import type { UserLoginData } from "@/types/interfaces";
+import type { UserLoginData } from '@/types/interfaces'
 
 export const getAuthHeaders = () => {
   const loginData: UserLoginData | null = ls.get('auth')

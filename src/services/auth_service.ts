@@ -14,7 +14,7 @@ class AuthService {
       email,
       password,
     })
-    
+
     const [, token] = response.headers.get('Authorization').split(' ')
 
     if (!response.ok) {
@@ -24,9 +24,9 @@ class AuthService {
 
     ls.set(STORAGE_KEY, {
       ...response.data,
-      accessToken: token
+      accessToken: token,
     })
-    
+
     return response.data
   }
 
@@ -37,13 +37,17 @@ class AuthService {
   async register(model) {
     return await this.api.post('/registration', model)
   }
-  
+
   getAuthInfo() {
-    const data: { user: {organization_id: string }, organization: { id: number, name: string, type: string }} = ls.get(STORAGE_KEY)
-    if (data) return {
-      user: data.user,
-      organization: data.organization
-    }
+    const data: {
+      user: { organization_id: string }
+      organization: { id: number; name: string; type: string }
+    } = ls.get(STORAGE_KEY)
+    if (data)
+      return {
+        user: data.user,
+        organization: data.organization,
+      }
   }
 }
 

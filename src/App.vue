@@ -22,14 +22,13 @@ import AuthLayout from '@/layouts/AuthLayout.vue'
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
 import { PUBLIC_PAGES } from '@/settings/constants'
-import {useAuthStore} from '@/stores/auth';
+import { useAuthStore } from '@/stores/auth'
 
 const route = useRoute()
 
 const authStore = useAuthStore()
 
 authStore.checkIsLoggedIn()
-
 
 const needAuth = computed(() => !PUBLIC_PAGES.includes(route.name as string))
 </script>

@@ -2,10 +2,23 @@
   <div class="logo">
     <div class="icon">
       <n-icon size="35">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M11 20.34A4 4 0 0 0 4 23a4 4 0 1 0 7-2.66zm16 0A4 4 0 0 0 20 23a4 4 0 1 0 7-2.66z"/><path d="M20 8v12a5 5 0 0 0-.9 2h-6.2a4.83 4.83 0 0 0-1.16-2.31 5 5 0 0 0-7.45 0 4.83 4.83 0 0 0-1 1.78A3 3 0 0 1 2 19V8a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3zm9.74 6.5a2.83 2.83 0 0 0-.4-.67l-3-3.71A3 3 0 0 0 24 9h-.5v5.5z"/><path d="M30 15.7V21a1 1 0 0 1-1 1h-.1a5 5 0 0 0-7.9-3V9h1.5v6a.5.5 0 0 0 .5.5h7a1.36 1.36 0 0 1 0 .2Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+          <path
+            d="M11 20.34A4 4 0 0 0 4 23a4 4 0 1 0 7-2.66zm16 0A4 4 0 0 0 20 23a4 4 0 1 0 7-2.66z"
+          />
+          <path
+            d="M20 8v12a5 5 0 0 0-.9 2h-6.2a4.83 4.83 0 0 0-1.16-2.31 5 5 0 0 0-7.45 0 4.83 4.83 0 0 0-1 1.78A3 3 0 0 1 2 19V8a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3zm9.74 6.5a2.83 2.83 0 0 0-.4-.67l-3-3.71A3 3 0 0 0 24 9h-.5v5.5z"
+          />
+          <path
+            d="M30 15.7V21a1 1 0 0 1-1 1h-.1a5 5 0 0 0-7.9-3V9h1.5v6a.5.5 0 0 0 .5.5h7a1.36 1.36 0 0 1 0 .2Z"
+          />
+        </svg>
       </n-icon>
     </div>
-    <div class="logo__text" :class="{ 'logo__text--collapsed': props.collapsed }">
+    <div
+      class="logo__text"
+      :class="{ 'logo__text--collapsed': props.collapsed }"
+    >
       <span>EasyDropshipping</span>
     </div>
   </div>

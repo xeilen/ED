@@ -15,7 +15,7 @@ export const useUsersStore = defineStore('usersStore', {
       this.error = false
       try {
         const response = await api.post('/users', {
-          organization_id: organizationId
+          organization_id: organizationId,
         })
         this.users = response.data
       } catch (e) {

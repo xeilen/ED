@@ -11,4 +11,4 @@ export const useApi = () =>
       'Content-Type': 'application/json',
       ...getAuthHeaders(),
     },
-})
+  })

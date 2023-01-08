@@ -12,7 +12,10 @@
         </n-form-item>
 
         <n-form-item label="Organization type">
-          <n-select v-model:value="model.organization_type" :options="organizationTypes"/>
+          <n-select
+            v-model:value="model.organization_type"
+            :options="organizationTypes"
+          />
         </n-form-item>
 
         <n-form-item label="Email">
@@ -27,17 +30,17 @@
           <n-input v-model:value="model.last_name" />
         </n-form-item>
 
-
         <n-form-item label="Phone number">
           <n-input v-model:value="model.phone_number" />
         </n-form-item>
-
 
         <n-form-item label="Password">
           <n-input v-model:value="model.password" />
         </n-form-item>
 
-        <n-button attr-type="submit" type="primary" :block="true">Register</n-button>
+        <n-button attr-type="submit" type="primary" :block="true"
+          >Register</n-button
+        >
       </n-form>
     </div>
   </div>
@@ -61,22 +64,22 @@ const model = reactive({
   last_name: '',
   phone_number: '',
   organization_name: '',
-  organization_type: null
+  organization_type: null,
 })
 
 const organizationTypes = [
   {
-    label: 'I\'m selling',
+    label: "I'm selling",
     value: 'client',
   },
   {
-    label: 'I\'m provider',
-    value: 'provider'
+    label: "I'm provider",
+    value: 'provider',
   },
   {
     label: 'root',
-    value: 'root'
-  }
+    value: 'root',
+  },
 ]
 
 const registerNewAccount = async () => {

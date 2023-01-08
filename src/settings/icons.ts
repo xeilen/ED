@@ -1,4 +1,1 @@
-export {
-  Users,
-  Newspaper
-} from '@vicons/fa'
+export { Users, Newspaper } from '@vicons/fa'

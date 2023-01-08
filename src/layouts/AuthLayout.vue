@@ -31,5 +31,4 @@ import AuthHeader from '@/layouts/auth_components/AuthHeader.vue'
   min-width: 100%
 #app footer
   align-self: flex-end
-
 </style>

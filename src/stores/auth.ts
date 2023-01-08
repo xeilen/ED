@@ -20,7 +20,7 @@ export const useAuthStore = defineStore('authStore', {
     async login(email: string, password: string) {
       const authData = await auth.initLogin(email, password)
       console.log(authData)
-      
+
       if (authData) this.setAuthData(authData)
     },
 
@@ -33,24 +33,23 @@ export const useAuthStore = defineStore('authStore', {
 
       return response.ok
     },
-    
+
     setAuthData(authData) {
       this.email = authData.user.email
       this.firstName = authData.user.first_name
       this.lastName = authData.user.last_name
       this.organizationName = authData.organization.name
     },
-  
+
     checkIsLoggedIn() {
       const userData: UserLoginData | null = ls.get(STORAGE_KEY)
-      
+
       if (userData && userData.accessToken) {
         this.setAuthData(userData)
         return true
       }
-      
+
       return false
-    }
-    
+    },
   },
 })

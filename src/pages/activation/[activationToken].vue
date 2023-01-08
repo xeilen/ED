@@ -9,7 +9,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { useApi } from '@/services/api'
 import { onBeforeMount, onMounted } from 'vue'
 import { useAuthStore } from '@/stores/auth'
-import {useMessage} from 'naive-ui';
+import { useMessage } from 'naive-ui'
 import ls from 'localstorage-slim'
 import { STORAGE_KEY } from '@/settings/constants'
 
@@ -33,7 +33,6 @@ onMounted(async () => {
     ls.set(STORAGE_KEY, response.data)
     message.success('Activation success!')
     router.push('/')
-
   } catch (e) {
     message.error('Activation Error')
 
@@ -42,5 +41,4 @@ onMounted(async () => {
 })
 </script>
 
-<style scoped lang="sass">
-</style>
+<style scoped lang="sass"></style>

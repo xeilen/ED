@@ -11,7 +11,7 @@
 <script setup lang="ts">
 import { useApi } from '@/services/api'
 import { ref } from 'vue'
-import {useAuthService} from '@/services/auth_service';
+import { useAuthService } from '@/services/auth_service'
 
 const api = useApi()
 const { user } = useAuthService().getAuthInfo()
@@ -20,7 +20,7 @@ const users = ref([])
 
 const fetchUsers = async () => {
   const response = await api.post('/users', {
-      organization_id: user.organization_id
+    organization_id: user.organization_id,
   })
   if (!response.ok) return
 
@@ -30,6 +30,4 @@ const fetchUsers = async () => {
 fetchUsers()
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

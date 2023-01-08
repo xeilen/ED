@@ -21,10 +21,7 @@
 
       <p class="login__create-account">
         Don't have an account yet?
-        <router-link
-          class="login__register-link"
-          to="/register"
-        >
+        <router-link class="login__register-link" to="/register">
           Create an account
         </router-link>
       </p>
