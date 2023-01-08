@@ -9,7 +9,7 @@ const router = createRouter({
   routes: [...routes, ...staticRoutes],
 })
 
-router.beforeEach((to, from) => {
+router.beforeEach((to) => {
   const authRequired = !PUBLIC_PAGES.includes(to.name as string)
   const loggedIn = !!ls.get('auth')?.accessToken
 

@@ -7,8 +7,7 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router'
 import { useApi } from '@/services/api'
-import { onBeforeMount, onMounted } from 'vue'
-import { useAuthStore } from '@/stores/auth'
+import { onMounted } from 'vue'
 import { useMessage } from 'naive-ui'
 import ls from 'localstorage-slim'
 import { STORAGE_KEY } from '@/settings/constants'
@@ -16,7 +15,6 @@ import { STORAGE_KEY } from '@/settings/constants'
 const route = useRoute()
 const router = useRouter()
 const api = useApi()
-const authStore = useAuthStore()
 const message = useMessage()
 
 onMounted(async () => {
